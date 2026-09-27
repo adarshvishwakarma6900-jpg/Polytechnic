@@ -10,15 +10,22 @@
 
 *{
     box-sizing:border-box;
-    margin:0;
-    padding:0;
 }
 
 body{
+    margin:0;
     font-family:Arial, sans-serif;
     background:#0b1020;
-    color:white;
-    min-height:100vh;
+    color:#fff;
+}
+
+.hidden{
+    display:none !important;
+}
+
+button{
+    cursor:pointer;
+    border:none;
 }
 
 /* ================= REGISTRATION ================= */
@@ -30,268 +37,294 @@ body{
     align-items:center;
     padding:20px;
     background:
-    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.8)),
+    linear-gradient(rgba(5,10,25,.88),rgba(5,10,25,.94)),
     url("1000143307.jpg") center/cover;
 }
 
 .register-box{
     width:100%;
     max-width:600px;
+    background:rgba(20,27,50,.96);
     padding:25px;
-    border-radius:20px;
-    background:rgba(15,20,40,.95);
-    box-shadow:0 0 30px rgba(0,0,0,.6);
+    border-radius:18px;
+    box-shadow:0 0 30px rgba(0,0,0,.5);
 }
 
 .register-box h1{
     text-align:center;
-    margin-bottom:8px;
     color:#64b5f6;
+    margin-top:0;
 }
 
 .register-box p{
     text-align:center;
-    margin-bottom:20px;
-    color:#ccc;
+    color:#bbb;
 }
 
-.photo-box{
-    text-align:center;
-    margin-bottom:15px;
+.form-group{
+    margin-bottom:14px;
 }
 
-.photo-preview{
-    width:100px;
-    height:100px;
-    border-radius:50%;
-    object-fit:cover;
-    border:3px solid #2196f3;
-    background:#222;
-}
-
-input,
-textarea,
-select{
-    width:100%;
-    padding:12px;
-    margin:7px 0 12px;
-    border:none;
-    outline:none;
-    border-radius:8px;
-    background:#20283d;
-    color:white;
-}
-
-textarea{
-    min-height:80px;
-    resize:vertical;
-}
-
-label{
+.form-group label{
+    display:block;
+    margin-bottom:6px;
     color:#ddd;
     font-size:14px;
 }
 
-.main-btn{
+.form-group input,
+.form-group select,
+.form-group textarea{
     width:100%;
-    padding:13px;
-    border:none;
-    border-radius:9px;
-    background:#1976d2;
-    color:white;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-    margin-top:8px;
+    padding:11px;
+    border-radius:8px;
+    border:1px solid #394563;
+    background:#11182d;
+    color:#fff;
+    outline:none;
 }
 
-.main-btn:hover{
-    background:#2196f3;
+.form-group textarea{
+    resize:vertical;
+    min-height:80px;
+}
+
+.photo-preview{
+    width:100px;
+    height:120px;
+    border:2px dashed #555;
+    border-radius:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:10px auto;
+    overflow:hidden;
+    color:#888;
+}
+
+.photo-preview img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.register-btn{
+    width:100%;
+    padding:13px;
+    border-radius:9px;
+    background:#1565c0;
+    color:#fff;
+    font-size:16px;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.register-btn:hover{
+    background:#1976d2;
 }
 
 /* ================= PORTAL ================= */
 
 #portal{
-    display:none;
     min-height:100vh;
     padding:25px 15px;
     background:
-    linear-gradient(rgba(5,10,25,.85),rgba(5,10,25,.95)),
+    linear-gradient(rgba(5,10,25,.9),rgba(5,10,25,.95)),
     url("1000143307.jpg") center/cover fixed;
 }
 
 .portal-header{
-    max-width:1000px;
-    margin:auto;
     text-align:center;
-    padding:25px;
+    margin-bottom:25px;
 }
 
 .portal-header h1{
     color:#64b5f6;
-    margin-bottom:8px;
+    margin-bottom:5px;
+}
+
+.portal-header p{
+    color:#aaa;
 }
 
 .student-card{
     max-width:700px;
-    margin:10px auto 25px;
-    background:#151d32;
-    padding:18px;
+    margin:auto;
+    background:#151d35;
+    padding:20px;
     border-radius:15px;
-    text-align:left;
+    margin-bottom:25px;
+}
+
+.student-card h2{
+    margin-top:0;
+    color:#90caf9;
 }
 
 .student-card p{
-    margin:6px 0;
+    margin:7px 0;
+    color:#ddd;
 }
 
-.portal-buttons{
-    max-width:700px;
+.menu-grid{
+    max-width:900px;
     margin:auto;
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
 }
 
-.portal-btn{
-    padding:18px 10px;
-    border:none;
-    border-radius:12px;
-    background:#17243d;
-    color:white;
-    font-size:16px;
+.menu-btn{
+    min-height:100px;
+    padding:20px;
+    border-radius:14px;
+    color:#fff;
+    background:#17213d;
+    border:1px solid #304268;
+    font-size:17px;
     font-weight:bold;
-    cursor:pointer;
-    border:1px solid #29466f;
+    transition:.2s;
 }
 
-.portal-btn:hover{
-    background:#1e4d82;
+.menu-btn:hover{
+    transform:translateY(-3px);
+    background:#20345f;
+}
+
+.menu-btn small{
+    display:block;
+    margin-top:8px;
+    color:#aaa;
+    font-weight:normal;
 }
 
 /* ================= TEST PAGE ================= */
 
 #testPage{
-    display:none;
     min-height:100vh;
-    background:#f4f6f8;
-    color:#222;
+    padding:12px;
+    background:#0b1020;
 }
 
 .test-header{
     position:sticky;
     top:0;
     z-index:10;
-    background:#102a43;
-    color:white;
+    background:#121a31;
     padding:12px;
-}
-
-.test-header-inner{
-    max-width:1100px;
-    margin:auto;
+    border-radius:10px;
+    margin-bottom:12px;
     display:flex;
     justify-content:space-between;
     align-items:center;
     gap:10px;
 }
 
+.test-title{
+    font-size:18px;
+    font-weight:bold;
+    color:#90caf9;
+}
+
 .timer{
-    background:#d32f2f;
-    padding:9px 14px;
+    background:#000;
+    color:#ff5252;
+    padding:8px 12px;
     border-radius:8px;
     font-weight:bold;
+    font-family:monospace;
 }
 
-.progress{
-    font-size:14px;
-}
-
-.test-container{
-    max-width:1100px;
-    margin:auto;
-    padding:15px;
+.question-info{
+    text-align:center;
+    color:#90caf9;
+    margin-bottom:10px;
+    font-weight:bold;
 }
 
 .question-box{
-    background:white;
-    border-radius:14px;
-    padding:20px;
-    box-shadow:0 2px 10px rgba(0,0,0,.12);
-}
-
-.subject-name{
-    color:#1565c0;
-    font-weight:bold;
-    margin-bottom:8px;
-}
-
-.question-number{
-    font-weight:bold;
-    margin-bottom:12px;
+    max-width:900px;
+    margin:auto;
+    background:#151d35;
+    padding:18px;
+    border-radius:12px;
+    border:1px solid #28385f;
 }
 
 .question-text{
     font-size:18px;
-    line-height:1.5;
-    margin-bottom:20px;
+    line-height:1.6;
+    margin-bottom:18px;
 }
 
 .option{
     display:block;
-    width:100%;
-    padding:14px;
-    margin:10px 0;
-    text-align:left;
-    border:2px solid #ddd;
-    border-radius:10px;
-    background:#fafafa;
+    background:#202b49;
+    border:1px solid #3b4c75;
+    padding:12px;
+    border-radius:8px;
+    margin:9px 0;
     cursor:pointer;
-    font-size:15px;
+    transition:.15s;
 }
 
 .option:hover{
-    background:#e3f2fd;
+    background:#29395e;
+}
+
+.option input{
+    margin-right:10px;
 }
 
 .option.selected{
-    background:#bbdefb;
-    border-color:#1976d2;
+    background:#1565c0;
+    border-color:#64b5f6;
 }
 
 .controls{
+    max-width:900px;
+    margin:15px auto;
     display:flex;
     gap:10px;
-    margin-top:18px;
+    justify-content:space-between;
 }
 
 .control-btn{
     flex:1;
-    padding:12px;
-    border:none;
+    padding:11px;
     border-radius:8px;
-    cursor:pointer;
+    background:#263653;
+    color:#fff;
     font-weight:bold;
-    background:#1565c0;
-    color:white;
 }
 
-.control-btn.submit{
+.control-btn:hover{
+    background:#34517e;
+}
+
+.submit-btn{
     background:#2e7d32;
+}
+
+.submit-btn:hover{
+    background:#388e3c;
 }
 
 /* ================= QUESTION GRID ================= */
 
-.grid-box{
-    margin-top:20px;
-    background:white;
+.question-grid-container{
+    max-width:900px;
+    margin:20px auto;
+    background:#151d35;
     padding:15px;
-    border-radius:14px;
+    border-radius:12px;
 }
 
-.grid-title{
-    font-weight:bold;
+.question-grid-title{
+    text-align:center;
+    color:#90caf9;
     margin-bottom:12px;
+    font-weight:bold;
 }
 
 .question-grid{
@@ -301,193 +334,209 @@ label{
 }
 
 .q-btn{
-    padding:8px 2px;
-    border:none;
-    border-radius:6px;
-    background:#eeeeee;
+    padding:7px 2px;
+    background:#eee;
     color:#222;
-    cursor:pointer;
+    border-radius:5px;
+    font-size:12px;
     font-weight:bold;
 }
 
-/* Answered */
 .q-btn.done{
     background:#81c784;
-    color:white;
+    color:#fff;
 }
 
-/* Visited but unanswered */
 .q-btn.visited{
-    background:#fbc02d;
+    background:#fdd835;
     color:#222;
 }
 
-/* Current */
 .q-btn.current{
     background:#1565c0;
-    color:white;
+    color:#fff;
 }
-
-/* Legend */
 
 .legend{
     display:flex;
+    justify-content:center;
     flex-wrap:wrap;
-    gap:12px;
-    margin-bottom:14px;
+    gap:15px;
+    margin-top:15px;
     font-size:13px;
 }
 
-.legend-item{
+.legend span{
     display:flex;
     align-items:center;
     gap:5px;
 }
 
 .legend-box{
-    width:17px;
-    height:17px;
-    border-radius:4px;
-    display:inline-block;
+    width:16px;
+    height:16px;
+    border-radius:3px;
 }
 
-.legend-gray{
-    background:#eee;
-    border:1px solid #bbb;
+.green{
+    background:#81c784;
 }
 
-.legend-blue{
+.yellow{
+    background:#fdd835;
+}
+
+.blue{
     background:#1565c0;
 }
 
-.legend-yellow{
-    background:#fbc02d;
-}
-
-.legend-green{
-    background:#81c784;
+.gray{
+    background:#eee;
 }
 
 /* ================= RESULT ================= */
 
 #resultPage{
-    display:none;
     min-height:100vh;
-    padding:25px 15px;
+    padding:20px;
     background:#0b1020;
 }
 
 .result-box{
     max-width:800px;
-    margin:auto;
-    background:#151d32;
+    margin:30px auto;
+    background:#151d35;
     padding:25px;
-    border-radius:18px;
+    border-radius:16px;
     text-align:center;
 }
 
 .result-box h1{
     color:#64b5f6;
-    margin-bottom:20px;
 }
 
-.score{
-    font-size:45px;
-    font-weight:bold;
-    color:#81c784;
-    margin:15px;
-}
-
-.stats{
+.result-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:10px;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:12px;
     margin:20px 0;
 }
 
-.stat{
-    background:#202a42;
-    padding:15px;
+.result-card{
+    background:#202b49;
+    padding:20px 10px;
     border-radius:10px;
 }
 
-.stat b{
-    display:block;
-    font-size:24px;
-    margin-bottom:5px;
+.result-card h2{
+    margin:0;
+}
+
+.result-card p{
+    color:#aaa;
+}
+
+.result-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+}
+
+.result-actions button{
+    padding:12px 18px;
+    border-radius:8px;
+    background:#1565c0;
+    color:#fff;
+    font-weight:bold;
 }
 
 /* ================= SOLUTIONS ================= */
 
 #solutionsPage{
-    display:none;
     min-height:100vh;
-    padding:20px 15px;
-    background:#f4f6f8;
-    color:#222;
+    padding:20px;
+    background:#0b1020;
 }
 
-.solutions-container{
+.solutions-header{
     max-width:1000px;
     margin:auto;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.solutions-header h1{
+    color:#64b5f6;
 }
 
 .solution-card{
-    background:white;
-    padding:18px;
-    margin-bottom:12px;
+    max-width:1000px;
+    margin:12px auto;
+    background:#151d35;
+    padding:17px;
     border-radius:12px;
-    box-shadow:0 2px 7px rgba(0,0,0,.1);
+    border-left:4px solid #42a5f5;
 }
 
 .solution-card h3{
-    color:#1565c0;
-    margin-bottom:8px;
+    color:#90caf9;
+    margin-top:0;
 }
 
-.correct-answer{
-    color:#2e7d32;
+.solution-question{
+    color:#fff;
+    line-height:1.6;
+}
+
+.solution-answer{
+    color:#81c784;
     font-weight:bold;
-    margin:8px 0;
 }
 
 .solution-text{
-    color:#555;
-    line-height:1.5;
+    color:#ddd;
+    line-height:1.6;
 }
 
-.back-btn{
-    padding:12px 20px;
-    border:none;
+.back-result{
+    display:block;
+    margin:25px auto;
+    padding:12px 25px;
     border-radius:8px;
     background:#1565c0;
-    color:white;
-    cursor:pointer;
-    margin-bottom:15px;
+    color:#fff;
+    font-weight:bold;
 }
 
 /* ================= MOBILE ================= */
 
 @media(max-width:600px){
 
-    .portal-buttons{
-        grid-template-columns:1fr;
-    }
-
     .question-grid{
-        grid-template-columns:repeat(5,1fr);
+        grid-template-columns:repeat(10,1fr);
+        gap:4px;
     }
 
-    .stats{
-        grid-template-columns:1fr;
-    }
-
-    .test-header-inner{
-        flex-direction:column;
+    .q-btn{
+        font-size:10px;
+        padding:7px 1px;
     }
 
     .question-text{
         font-size:16px;
+    }
+
+    .test-header{
+        flex-direction:column;
+    }
+
+    .controls{
+        flex-wrap:wrap;
+    }
+
+    .control-btn{
+        min-width:30%;
     }
 
 }
@@ -497,127 +546,79 @@ label{
 
 <body>
 
-
-<!-- =====================================================
-     REGISTRATION
-===================================================== -->
+<!-- ================= REGISTRATION ================= -->
 
 <section id="registration">
 
 <div class="register-box">
 
-<h1>Polytechnic Student Portal</h1>
+<h1>🎓 Polytechnic Student Portal</h1>
+<p>Mock Test शुरू करने के लिए Registration करें</p>
 
-<p>Student Registration</p>
-
-<div class="photo-box">
-
-<img
-id="photoPreview"
-class="photo-preview"
-src=""
-alt="Photo"
->
-
-<br><br>
-
-<input
-type="file"
-id="photo"
-accept="image/*"
-onchange="previewPhoto(event)"
->
-
+<div class="form-group">
+<label>Web Code</label>
+<input type="text" id="webCode" placeholder="Enter Web Code">
 </div>
 
-
-<label>Web Code</label>
-
-<input
-type="text"
-id="webCode"
-placeholder="Enter Web Code"
->
-
-
+<div class="form-group">
 <label>Student Name</label>
+<input type="text" id="studentName" placeholder="Full Name">
+</div>
 
-<input
-type="text"
-id="studentName"
-placeholder="Full Name"
->
-
-
+<div class="form-group">
 <label>Phone Number</label>
+<input type="tel" id="studentPhone" maxlength="10" placeholder="10 Digit Mobile Number">
+</div>
 
-<input
-type="tel"
-id="studentPhone"
-placeholder="Phone Number"
->
-
-
+<div class="form-group">
 <label>Email</label>
+<input type="email" id="studentEmail" placeholder="Email Address">
+</div>
 
-<input
-type="email"
-id="studentEmail"
-placeholder="Email"
->
-
-
+<div class="form-group">
 <label>Gender</label>
-
-<select id="gender">
-
+<select id="studentGender">
 <option value="">Select Gender</option>
 <option>Male</option>
 <option>Female</option>
 <option>Other</option>
-
 </select>
+</div>
 
-
+<div class="form-group">
 <label>Date of Birth</label>
+<input type="date" id="studentDOB">
+</div>
 
-<input
-type="date"
-id="dob"
->
-
-
+<div class="form-group">
 <label>Age</label>
+<input type="number" id="studentAge" placeholder="Age">
+</div>
 
-<input
-type="number"
-id="age"
-placeholder="Age"
->
-
-
+<div class="form-group">
 <label>Pincode</label>
+<input type="text" id="studentPincode" maxlength="6" placeholder="6 Digit Pincode">
+</div>
 
-<input
-type="number"
-id="pincode"
-placeholder="Pincode"
->
-
-
+<div class="form-group">
 <label>Address</label>
+<textarea id="studentAddress" placeholder="Full Address"></textarea>
+</div>
 
-<textarea
-id="address"
-placeholder="Full Address"
-></textarea>
+<div class="form-group">
 
+<label>Student Photo</label>
 
-<button
-class="main-btn"
-onclick="registerStudent()"
->
-Enter Student Portal
+<div class="photo-preview" id="photoPreview">
+Photo
+</div>
+
+<input type="file" id="studentPhoto" accept="image/*">
+
+</div>
+
+<button class="register-btn" onclick="registerStudent()">
+Register & Continue
 </button>
 
 </div>
@@ -625,81 +626,54 @@ Enter Student Portal
 </section>
 
 
-<!-- =====================================================
-     PORTAL
-===================================================== -->
+<!-- ================= PORTAL ================= -->
 
-<section id="portal">
+<section id="portal" class="hidden">
 
 <div class="portal-header">
 
 <h1>🎓 Polytechnic Student Portal</h1>
-
-<p>Welcome to your preparation portal</p>
+<p>Welcome to your Polytechnic Preparation Portal</p>
 
 </div>
-
 
 <div class="student-card">
 
-<p>
-<b>Name:</b>
-<span id="displayName"></span>
-</p>
+<h2>Student Information</h2>
 
-<p>
-<b>Phone:</b>
-<span id="displayPhone"></span>
-</p>
-
-<p>
-<b>Email:</b>
-<span id="displayEmail"></span>
-</p>
-
-<p>
-<b>Gender:</b>
-<span id="displayGender"></span>
-</p>
+<p><b>Name:</b> <span id="displayName"></span></p>
+<p><b>Phone:</b> <span id="displayPhone"></span></p>
+<p><b>Email:</b> <span id="displayEmail"></span></p>
+<p><b>Gender:</b> <span id="displayGender"></span></p>
+<p><b>Age:</b> <span id="displayAge"></span></p>
 
 </div>
 
+<div class="menu-grid">
 
-<div class="portal-buttons">
-
-<button
-class="portal-btn"
-onclick="startMockTest()"
->
+<button class="menu-btn" onclick="startMockTest()">
 📝 Start Mock Test
+<small>100 Questions • 2 Hours</small>
 </button>
 
-<button
-class="portal-btn"
-onclick="showComingSoon('Practice')"
->
+<button class="menu-btn" onclick="showComingSoon('Practice')">
 📚 Practice
+<small>Subject-wise Practice</small>
 </button>
 
-<button
-class="portal-btn"
-onclick="showComingSoon('Chemistry Chapters')"
->
+<button class="menu-btn" onclick="showComingSoon('Chemistry Chapters')">
 🧪 Chemistry Chapters
+<small>Chapter-wise Chemistry</small>
 </button>
 
-<button
-class="portal-btn"
-onclick="showComingSoon('Physics Chapters')"
->
+<button class="menu-btn" onclick="showComingSoon('Physics Chapters')">
 ⚡ Physics Chapters
+<small>Chapter-wise Physics</small>
 </button>
 
-<button
-class="portal-btn"
-onclick="showComingSoon('Math Chapters')"
->
+<button class="menu-btn" onclick="showComingSoon('Math Chapters')">
 📐 Math Chapters
+<small>Chapter-wise Mathematics</small>
 </button>
 
 </div>
@@ -707,150 +681,80 @@ onclick="showComingSoon('Math Chapters')"
 </section>
 
 
-<!-- =====================================================
-     MOCK TEST
-===================================================== -->
+<!-- ================= TEST PAGE ================= -->
 
-<section id="testPage">
+<section id="testPage" class="hidden">
 
 <div class="test-header">
 
-<div class="test-header-inner">
-
-<div>
-
-<b>Polytechnic Mock Test</b>
-
-<div
-class="progress"
-id="progressText"
->
-Question 1 / 100
+<div class="test-title">
+Polytechnic Mock Test
 </div>
 
-</div>
-
-<div
-class="timer"
-id="timer"
->
+<div class="timer" id="timer">
 02:00:00
 </div>
 
 </div>
 
+<div class="question-info" id="questionInfo">
+Question 1 / 100
 </div>
-
-
-<div class="test-container">
 
 <div class="question-box">
 
-<div
-class="subject-name"
-id="subjectName"
->
-Mathematics
+<div class="question-text" id="questionText"></div>
+
+<div id="optionsContainer"></div>
+
 </div>
-
-<div
-class="question-number"
-id="questionNumber"
->
-Question 1
-</div>
-
-<div
-class="question-text"
-id="questionText"
->
-Question
-</div>
-
-<div id="options"></div>
-
 
 <div class="controls">
 
-<button
-class="control-btn"
-onclick="previousQuestion()"
->
+<button class="control-btn" onclick="previousQuestion()">
 ← Previous
 </button>
 
-<button
-class="control-btn"
-onclick="nextQuestion()"
->
+<button class="control-btn" onclick="nextQuestion()">
 Next →
 </button>
 
-<button
-class="control-btn submit"
-onclick="submitTest()"
->
-Submit
+<button class="control-btn submit-btn" onclick="submitTest()">
+Submit Test
 </button>
 
 </div>
 
-</div>
 
+<div class="question-grid-container">
 
-<!-- Question Grid -->
-
-<div class="grid-box">
-
-<div class="grid-title">
+<div class="question-grid-title">
 Question Navigation
 </div>
 
+<div class="question-grid" id="questionGrid"></div>
 
 <div class="legend">
 
-<div class="legend-item">
-
-<span class="legend-box legend-gray"></span>
-
-Not Visited
-
-</div>
-
-
-<div class="legend-item">
-
-<span class="legend-box legend-blue"></span>
-
-Current
-
-</div>
-
-
-<div class="legend-item">
-
-<span class="legend-box legend-yellow"></span>
-
-Visited / Unanswered
-
-</div>
-
-
-<div class="legend-item">
-
-<span class="legend-box legend-green"></span>
-
+<span>
+<div class="legend-box green"></div>
 Answered
+</span>
 
-</div>
+<span>
+<div class="legend-box yellow"></div>
+Visited
+</span>
 
-</div>
+<span>
+<div class="legend-box blue"></div>
+Current
+</span>
 
-
-<div
-class="question-grid"
-id="questionGrid"
-></div>
+<span>
+<div class="legend-box gray"></div>
+Not Visited
+</span>
 
 </div>
 
@@ -859,158 +763,1090 @@ id="questionGrid"
 </section>
 
 
-<!-- =====================================================
-     RESULT
-===================================================== -->
+<!-- ================= RESULT PAGE ================= -->
 
-<section id="resultPage">
+<section id="resultPage" class="hidden">
 
 <div class="result-box">
 
-<h1>🎯 Mock Test Result</h1>
+<h1>🎉 Test Result</h1>
 
-<div
-class="score"
-id="finalScore"
->
-0 / 100
+<div class="result-grid">
+
+<div class="result-card">
+<h2 id="correctCount">0</h2>
+<p>Correct</p>
 </div>
 
-
-<div class="stats">
-
-<div class="stat">
-
-<b id="correctCount">
-0
-</b>
-
-Correct
-
+<div class="result-card">
+<h2 id="wrongCount">0</h2>
+<p>Wrong</p>
 </div>
 
-
-<div class="stat">
-
-<b id="wrongCount">
-0
-</b>
-
-Wrong
-
+<div class="result-card">
+<h2 id="unattemptedCount">0</h2>
+<p>Unattempted</p>
 </div>
 
-
-<div class="stat">
-
-<b id="unattemptedCount">
-0
-</b>
-
-Unattempted
-
+<div class="result-card">
+<h2 id="percentage">0%</h2>
+<p>Percentage</p>
 </div>
 
 </div>
 
+<div class="result-actions">
 
-<p id="percentageText">
-Percentage: 0%
-</p>
-
-
-<br>
-
-
-<button
-class="main-btn"
-onclick="showSolutions()"
->
-📖 Solved Questions
+<button onclick="showSolutions()">
+📖 Solved Questions 1–100
 </button>
 
-
-<button
-class="main-btn"
-onclick="backToPortal()"
->
-🏠 Back To Portal
+<button onclick="backToPortal()">
+🏠 Back to Portal
 </button>
+
+</div>
 
 </div>
 
 </section>
 
 
-<!-- =====================================================
-     SOLUTIONS
-===================================================== -->
+<!-- ================= SOLUTIONS PAGE ================= -->
 
-<section id="solutionsPage">
+<section id="solutionsPage" class="hidden">
 
-<div class="solutions-container">
+<div class="solutions-header">
 
-<button
-class="back-btn"
-onclick="backToResult()"
->
-← Back To Result
-</button>
+<h1>📖 Solved Questions 1–100</h1>
 
-<h1 style="margin-bottom:15px;">
-📖 Solved Questions
-</h1>
+<p>
+Mathematics • Physics • Chemistry
+</p>
+
+</div>
 
 <div id="solutionsContainer"></div>
 
-</div>
+<button class="back-result" onclick="backToResult()">
+← Back to Result
+</button>
 
 </section>
 
 
 <script>
 
-/* =====================================================
-   STUDENT REGISTRATION
-===================================================== */
+/* =========================================================
+   QUESTIONS
+========================================================= */
 
-const correctWebCode = "Adityavishwakarma771";
+const questions = [
+
+/* ================= MATHEMATICS ================= */
+
+{
+id:1,subject:"Mathematics",
+question:"पाँच व्यक्ति सामाजिक कार्य करने में क्रमशः 10, 7, 13, 20 और 15 घंटे का समय लेते हैं। समयों का माध्य ज्ञात कीजिए।",
+options:["13","11","10","12"],
+answer:"A"
+},
+
+{
+id:2,subject:"Mathematics",
+question:"यदि 52 आदमी एक काम को 35 दिन में पूरा कर सकते हैं, तो 28 आदमी उसी काम को कितने दिनों में करेंगे?",
+options:["60 दिन","65 दिन","70 दिन","50 दिन"],
+answer:"B"
+},
+
+{
+id:3,subject:"Mathematics",
+question:"यदि बिन्दु A(2, 3), B(4, k) और C(6, -3) सरेख हैं, तो k का मान ज्ञात कीजिए।",
+options:["0","2","1","3"],
+answer:"A"
+},
+
+{
+id:4,subject:"Mathematics",
+question:"यदि cot θ = 15 है, तो [(2 + 2sinθ)(1 - sinθ)] / [(1 + cosθ)(2 - 2cosθ)] का मान ज्ञात कीजिए।",
+options:["64/225","225/64","33/64","उपरोक्त में से कोई नहीं"],
+answer:null
+},
+
+{
+id:5,subject:"Mathematics",
+question:"ऊँचाई 14 सेमी वाले एक लम्बवृत्तीय बेलन का वक्र पृष्ठीय क्षेत्रफल 88 सेमी² है। बेलन के आधार का व्यास ज्ञात कीजिए।",
+options:["6 सेमी","4 सेमी","3 सेमी","2 सेमी"],
+answer:"D"
+},
+
+{
+id:6,subject:"Mathematics",
+question:"एक शंकु की ऊँचाई 16 सेमी और आधार की त्रिज्या 12 सेमी है। उसका सम्पूर्ण पृष्ठीय क्षेत्रफल ज्ञात कीजिए।",
+options:["537.6 सेमी²","657.6 सेमी²","357.6 सेमी²","753.6 सेमी²"],
+answer:null
+},
+
+{
+id:7,subject:"Mathematics",
+question:"p⁴ − 81 के गुणनखण्ड हैं।",
+options:[
+"(p² − 3)(p² + 3)",
+"(p − 3)(p + 3)(p + 9)",
+"(p − 9)²(p + 9)²",
+"कोई नहीं"
+],
+answer:"D"
+},
+
+{
+id:8,subject:"Mathematics",
+question:"यदि 1/(x + 1) + 1/(x + 2) = 2/(x + 10), तो x का मान होगा।",
+options:["−17/26","−7/26","−25/17","−26/17"],
+answer:"D"
+},
+
+{
+id:9,subject:"Mathematics",
+question:"यदि किसी संख्या में से उस संख्या का 2/5 भाग घटाया जाए, तो 72 प्राप्त होता है। संख्या होगी।",
+options:["150","120","130","140"],
+answer:"B"
+},
+
+{
+id:10,subject:"Mathematics",
+question:"मिट्टी से ऊँचाई 24 सेमी और आधार त्रिज्या 6 सेमी वाला एक शंकु बनाया गया। इसे गोले के आकार में बदल दिया गया। गोले की त्रिज्या क्या होगी?",
+options:["4 सेमी","3 सेमी","5 सेमी","6 सेमी"],
+answer:"D"
+},
+
+{
+id:11,subject:"Mathematics",
+question:"समीकरण ax² + bx + c = 0 के मूल एक-दूसरे के व्युत्क्रम होंगे, यदि।",
+options:["ab = c","c = a","b = c","a = b"],
+answer:"B"
+},
+
+{
+id:12,subject:"Mathematics",
+question:"यदि x − 1, 4x³ + 3x² − 4x + k² का एक गुणनखण्ड है, तो k का मान ज्ञात कीजिए।",
+options:["2","3","−2","−3"],
+answer:null
+},
+
+{
+id:13,subject:"Mathematics",
+question:"यदि किसी वृत्त का परिमाप और क्षेत्रफल संख्यात्मक रूप से बराबर हैं, तब वृत्त की त्रिज्या है।",
+options:["7 मात्रक","1 मात्रक","2 मात्रक","4 मात्रक"],
+answer:"C"
+},
+
+{
+id:14,subject:"Mathematics",
+question:"एक आदमी दक्षिण की ओर 10 मी जाता है, उसके पश्चात् पश्चिम की ओर 24 मी जाता है। आरम्भ बिन्दु से व्यक्ति अब कितनी दूर है?",
+options:["15 मी","21 मी","25 मी","26 मी"],
+answer:"D"
+},
+
+{
+id:15,subject:"Mathematics",
+question:"ΔPQR में Q पर समकोण है। यदि PQ = 5 सेमी और PR + QR = 25 सेमी, तो sin P का मान होगा।",
+options:["12/13","5/13","12/5","इनमें से कोई नहीं"],
+answer:"A"
+},
+
+{
+id:16,subject:"Mathematics",
+question:"एक बिन्दु से वृत्त पर खींची गई स्पर्श रेखा की लम्बाई 24 सेमी है तथा बिन्दु से वृत्त के केन्द्र की दूरी 25 सेमी है। वृत्त की त्रिज्या है।",
+options:["15 सेमी","7 सेमी","12 सेमी","24.5 सेमी"],
+answer:"B"
+},
+
+{
+id:17,subject:"Mathematics",
+question:"यदि log₍1/2₎(4) = x, तो x का मान होगा।",
+options:["2","−4","−2","4"],
+answer:"C"
+},
+
+{
+id:18,subject:"Mathematics",
+question:"एक सिक्का उछालने पर चित आने की प्रायिकता क्या है?",
+options:["0","1/2","1","1/3"],
+answer:"B"
+},
+
+{
+id:19,subject:"Mathematics",
+question:"एक पासे को एक बार फेंकने पर सम संख्या आने की प्रायिकता है।",
+options:["1/6","1/2","1/3","2/3"],
+answer:"B"
+},
+
+{
+id:20,subject:"Mathematics",
+question:"संख्याओं की उस सूची के प्रथम पदों का योग ज्ञात कीजिए जिसका योग प्रश्न में दिए गए अनुक्रम के अनुसार है।",
+options:["612","672","622","700"],
+answer:null
+},
+
+{
+id:21,subject:"Mathematics",
+question:"एक डिब्बे में भरा हुआ पेंट 9.375 m² के क्षेत्रफल पर पेंट करने के लिए पर्याप्त है। 22.5 cm × 10 cm × 7.5 cm विमाओं वाली पेंट की जाने वाली ईंटों की संख्या कितनी होगी?",
+options:["100","120","130","110"],
+answer:"A"
+},
+
+{
+id:22,subject:"Mathematics",
+question:"यदि ΔABC और ΔDEF समरूप हैं तथा AB/DE = BC/EF = AC/DF = 5/7, तो ΔABC और ΔDEF के क्षेत्रफलों का अनुपात क्या होगा?",
+options:["43:25","5:7","125:343","25:49"],
+answer:"D"
+},
+
+{
+id:23,subject:"Mathematics",
+question:"यदि cos θ = 5/4 जैसा प्रश्न में दिया गया है, तो cosθ + 2cosθ का मान ज्ञात कीजिए।",
+options:["3","9/4","5/4","इनमें से कोई नहीं"],
+answer:null
+},
+
+{
+id:24,subject:"Mathematics",
+question:"यदि A = [[0, 0], [1, 0]], तो A² का मान है।",
+options:["1","0","2A","A"],
+answer:"B"
+},
+
+{
+id:25,subject:"Mathematics",
+question:"यदि A एक आव्यूह है, तो प्रश्न में दिए गए आव्यूह व्यंजक का मान ज्ञात कीजिए।",
+options:["2ⁿ","14°","10°","B*"],
+answer:null
+},
+
+{
+id:26,subject:"Mathematics",
+question:"समान्तर चतुर्भुज में किन्हीं दो आसन्न कोणों के अर्द्धक एक-दूसरे को कितने कोण पर प्रतिच्छेद करते हैं?",
+options:["90°","30°","45°","60°"],
+answer:"A"
+},
+
+{
+id:27,subject:"Mathematics",
+question:"यदि a + b = 10 तथा a² + b² = 58, तो a³ + b³ का मान होगा।",
+options:["350","380","370","360"],
+answer:"C"
+},
+
+{
+id:28,subject:"Mathematics",
+question:"यदि tan x = 1/√3 है, तो x का मान होगा।",
+options:["30°","45°","60°","90°"],
+answer:"A"
+},
+
+{
+id:29,subject:"Mathematics",
+question:"यदि 8(2x + 1)/(3x − 2) = 9/10, तो x का मान ज्ञात कीजिए।",
+options:["2","1","3","4"],
+answer:null
+},
+
+{
+id:30,subject:"Mathematics",
+question:"सीमा और डॉली दो मित्र हैं। इसकी क्या प्रायिकता है कि दोनों का जन्मदिन एक ही दिन हो? (लीप वर्ष छोड़कर)",
+options:["364/365","1/365","1/366","0"],
+answer:"B"
+},
+
+{
+id:31,subject:"Mathematics",
+question:"रेखाएँ x = 3 और y = 3 तथा x-अक्ष से प्राप्त त्रिभुज का क्षेत्रफल है।",
+options:["1 वर्ग इकाई","2 वर्ग इकाई","9/2 वर्ग इकाई","7/2 वर्ग इकाई"],
+answer:null
+},
+
+{
+id:32,subject:"Mathematics",
+question:"एक द्विघात बहुपद ज्ञात कीजिए, जिसके शून्यकों का योग तथा गुणनफल क्रमशः −3 और 2 हैं।",
+options:["x² + 2x − 3","x² + 3x + 1","x² + 3x + 2","x² + x + 2"],
+answer:"C"
+},
+
+{
+id:33,subject:"Mathematics",
+question:"यदि द्विघात समीकरण के मूलों का योग 6 तथा गुणनफल 6 है, तब समीकरण होगी।",
+options:["x² + 6x − 6 = 0","x² − 6x + 6 = 0","x² − 6x − 6 = 0","x² + 6x + 6 = 0"],
+answer:"B"
+},
+
+{
+id:34,subject:"Mathematics",
+question:"एक समचतुर्भुज की एक भुजा 12 सेमी तथा एक विकर्ण 10 सेमी है। दूसरे विकर्ण की लम्बाई होगी।",
+options:["16 सेमी","15 सेमी","11 सेमी","20 सेमी"],
+answer:null
+},
+
+{
+id:35,subject:"Mathematics",
+question:"यदि a = 2√6 तथा b = 1/a, तो a² + b² का मान होगा।",
+options:["99","96/23","577/24","97"],
+answer:"C"
+},
+
+{
+id:36,subject:"Mathematics",
+question:"बिन्दुओं (3, 2) एवं (−2, −3) के बीच की दूरी है।",
+options:["√52/6","√50","√51","√55"],
+answer:"B"
+},
+
+{
+id:37,subject:"Mathematics",
+question:"किसी घन का सम्पूर्ण पृष्ठीय क्षेत्रफल 96 सेमी² है। घन का आयतन होगा।",
+options:["64 सेमी³","27 सेमी³","512 सेमी³","8 सेमी³"],
+answer:"A"
+},
+
+{
+id:38,subject:"Mathematics",
+question:"यदि x − 1/x = 9, तो x² + 1/x² का मान है।",
+options:["83","80","84","82"],
+answer:"A"
+},
+
+{
+id:39,subject:"Mathematics",
+question:"तीन दिए हुए असरेखी बिन्दुओं द्वारा होकर जाने वाले वृत्तों की संख्या होगी।",
+options:["2","3","0","1"],
+answer:"D"
+},
+
+{
+id:40,subject:"Mathematics",
+question:"tan 1875° का मान होगा।",
+options:[
+"(√3 − 1)/(√3 + 1)",
+"√3 − 1",
+"√3 + 1",
+"(√3 + 1)/(√3 − 1)"
+],
+answer:"D"
+},
+
+{
+id:41,subject:"Mathematics",
+question:"संख्या 34 को दो भागों में ऐसे विभाजित कीजिए कि पहले भाग का 2/3 भाग दूसरे भाग के बराबर हो।",
+options:["24, 10","16, 18","23, 11","14, 20"],
+answer:null
+},
+
+{
+id:42,subject:"Mathematics",
+question:"समीकरण x − y = 8 का ग्राफ x-अक्ष को किस बिन्दु पर काटता है?",
+options:["(4, 0)","(−2, 0)","(8, 0)","(2, 0)"],
+answer:"C"
+},
+
+{
+id:43,subject:"Mathematics",
+question:"वर्गीकृत बंटन में बहुलक ज्ञात करने का सूत्र है।",
+options:[
+"l + [(f₁−f₀)/(2f₁−f₀−f₂)]h",
+"l + [(f₀−f₁)/(2f₁−f₀−f₂)]h",
+"l + [(f₁−f₀)/(2f₁−f₀−f₂)] × h",
+"इनमें से कोई नहीं"
+],
+answer:"C"
+},
+
+{
+id:44,subject:"Mathematics",
+question:"दो समरूप त्रिभुजों की संगत भुजाएँ 4:9 के अनुपात में हैं, तो उनके क्षेत्रफलों का अनुपात है।",
+options:["2:3","9:4","16:81","4:9"],
+answer:"C"
+},
+
+{
+id:45,subject:"Mathematics",
+question:"एक वृत्ताकार खेत पर ₹24 प्रति मीटर की दर से बाड़ लगाने का व्यय ₹6280 है। खेत की ₹0.50 प्रति वर्ग मीटर की दर से जुताई का व्यय कितना होगा?",
+options:["1935","1950","1960","1925"],
+answer:null
+},
+
+{
+id:46,subject:"Mathematics",
+question:"यदि ΔPQR ~ ΔEFD, तो ∠E किस कोण के बराबर है?",
+options:["∠P","∠Q","∠R","इनमें से कोई नहीं"],
+answer:"A"
+},
+
+{
+id:47,subject:"Mathematics",
+question:"यदि 5sinθ = 3, तब secθ − tanθ का मान होगा।",
+options:["4/5","1/4","1","5/4"],
+answer:null
+},
+
+{
+id:48,subject:"Mathematics",
+question:"समबाहु त्रिभुज का क्षेत्रफल ज्ञात कीजिए जिसकी एक भुजा 7 सेमी है।",
+options:["49√3/2 सेमी²","49/3 सेमी²","49/3√3 सेमी²","49√3/4 सेमी²"],
+answer:"D"
+},
+
+{
+id:49,subject:"Mathematics",
+question:"यदि x, y और z के बीच दिए गए संबंध के अनुसार x + y का मान ज्ञात कीजिए।",
+options:["2xyz","3y","2y","y"],
+answer:null
+},
+
+{
+id:50,subject:"Mathematics",
+question:"यदि sin(A−B) = 1/2 तथा cos(A+B) = 0, A+B ≤ 90° और A>B, तो ∠A का मान होगा।",
+options:["60°","15°","45°","90°"],
+answer:"A"
+},
+
+/* ================= PHYSICS ================= */
+
+{
+id:51,subject:"Physics",
+question:"पृथ्वी के एकांक क्षेत्रफल द्वारा एकांक समय में ग्रहण की गई सौर ऊर्जा की मात्रा को कहते हैं।",
+options:["सौर नियतांक","सौर चर","उत्सर्जक शक्ति","इनमें से कोई नहीं"],
+answer:"A"
+},
+
+{
+id:52,subject:"Physics",
+question:"रॉकेट-नोदन का मूल सिद्धान्त है।",
+options:["द्रव्यमान संरक्षण","कोणीय संवेग संरक्षण","ऊर्जा संरक्षण","न्यूटन का तृतीय नियम"],
+answer:"D"
+},
+
+{
+id:53,subject:"Physics",
+question:"निम्न में से कौन-सी इकाई ऊर्जा मापक है?",
+options:["किलोवाट-घण्टा","वोल्ट सेकण्ड/ओम","वेबर/ऐम्पियर","ये सभी"],
+answer:"A"
+},
+
+{
+id:54,subject:"Physics",
+question:"बन्द कुंजी का प्रतीक चिन्ह कौन-सा है?",
+options:["खुला स्विच","बन्द स्विच","प्रतिरोध","इनमें से कोई नहीं"],
+answer:"B"
+},
+
+{
+id:55,subject:"Physics",
+question:"यदि पृथ्वी ध्रुवीय अक्ष के परितः घूमना बन्द कर दे, तो ध्रुव पर स्थित वस्तु के भार पर क्या प्रभाव पड़ेगा?",
+options:["कोई परिवर्तन नहीं होगा","बढ़ जाएगा","घट जाएगा, परन्तु शून्य नहीं होगा","घट जाएगा और शून्य"],
+answer:"A"
+},
+
+{
+id:56,subject:"Physics",
+question:"6000 Å तरंगदैर्ध्य का प्रकाश μ = √3 वाले माध्यम पर आपतित होता है। यदि परावर्तित और अपवर्तित किरणें परस्पर लम्बवत हों, तो आपतन कोण होगा।",
+options:["30°","45°","60°","90°"],
+answer:"C"
+},
+
+{
+id:57,subject:"Physics",
+question:"पृथ्वी का द्रव्यमान M निम्न में से किसके बराबर है? (g = GM/R²)",
+options:["R²/G","GR²/9","9G/R³","gR²/G"],
+answer:"D"
+},
+
+{
+id:58,subject:"Physics",
+question:"एक अवतल लेंस की फोकस दूरी 2 मी है, तो लेंस की क्षमता है।",
+options:["−0.50 D","0.90 D","0.60 D","0.10 D"],
+answer:"A"
+},
+
+{
+id:59,subject:"Physics",
+question:"नेत्र की वह पतली झिल्ली जो प्रकाश को अन्दर आने देती है, है।",
+options:["कॉर्निया","पक्ष्माभी मांसपेशियाँ","रेटिना","पुतली"],
+answer:"D"
+},
+
+{
+id:60,subject:"Physics",
+question:"संबंध sin i / sin r = नियतांक किस नियम को परिभाषित करता है?",
+options:["न्यूटन का नियम","स्नैल का नियम","लेन्ज का नियम","हर्ट्ज का नियम"],
+answer:"B"
+},
+
+{
+id:61,subject:"Physics",
+question:"निम्न में से कौन मृदु इस्पात से नहीं बना होता है?",
+options:["विद्युत चुम्बक","ट्रांसफार्मर की कोर","डायनेमो की कोर","लाउडस्पीकर का चुम्बक"],
+answer:"D"
+},
+
+{
+id:62,subject:"Physics",
+question:"पारे का घनत्व होता है।",
+options:["20.0 ग्राम/सेमी³","13.6 ग्राम/सेमी³","10.0 ग्राम/सेमी³","14.6 ग्राम/सेमी³"],
+answer:"B"
+},
+
+{
+id:63,subject:"Physics",
+question:"निम्न में से अदिश राशि है।",
+options:["बल","वेग","द्रव्यमान","विस्थापन"],
+answer:"C"
+},
+
+{
+id:64,subject:"Physics",
+question:"3000 Å तरंगदैर्ध्य वाले प्रकाश की आवृत्ति क्या होगी?",
+options:["1 GHz","100 GHz","1000 GHz","10 GHz"],
+answer:null
+},
+
+{
+id:65,subject:"Physics",
+question:"विद्युत धारा का SI मात्रक है।",
+options:["वोल्ट/मीटर","ऐम्पियर","इलेक्ट्रॉन वोल्ट","न्यूटन"],
+answer:"B"
+},
+
+{
+id:66,subject:"Physics",
+question:"अमीटर के पैमाने पर 1 ऐम्पियर के मध्य 20 भाग चिन्हित हैं, तो अमीटर का अल्पतमांक है।",
+options:["0.05 A","0.2 A","0.01 A","0.5 A"],
+answer:"A"
+},
+
+{
+id:67,subject:"Physics",
+question:"एक व्यक्ति 20 सेमी दूरी पर रखी वस्तु को पढ़ना चाहता है, जबकि उसके नेत्रों का निकट बिन्दु 30 सेमी है। आवश्यक लेंस की क्षमता होगी।",
+options:["1.67 D","0.67 D","2.01 D","1.0 D"],
+answer:"A"
+},
+
+{
+id:68,subject:"Physics",
+question:"ध्वनि तरंगों की आवृत्ति का परास है।",
+options:["20 Hz से 20 kHz","25 Hz से 25 kHz","40 Hz से 45 kHz","45 Hz से 50 kHz"],
+answer:"A"
+},
+
+{
+id:69,subject:"Physics",
+question:"तारों के टिमटिमाने का कारण है।",
+options:[
+"तारों द्वारा रुक-रुक कर प्रकाश उत्सर्जित करना",
+"मानव नेत्र द्वारा रुक-रुक कर प्रकाश ग्रहण करना",
+"वायुमण्डल के अपवर्तनांक में सतत परिवर्तन",
+"तारों का अपनी स्थिति के इधर-उधर कम्पन करना"
+],
+answer:"C"
+},
+
+{
+id:70,subject:"Physics",
+question:"जल में नौका के नौकायन द्वारा निर्मित तरंग है।",
+options:["अनुप्रस्थ","अनुदैर्ध्य","दोनों (a) एवं (b)","प्रगामी"],
+answer:"A"
+},
+
+{
+id:71,subject:"Physics",
+question:"जिस ऊँचाई पर वस्तु का भार पृथ्वी की सतह पर वस्तु के भार का 1/4 भाग हो, वह ऊँचाई है।",
+options:["5R","15R","R","4R"],
+answer:"C"
+},
+
+{
+id:72,subject:"Physics",
+question:"समान धातु से बने दो तारों की त्रिज्याएँ 1:2 के अनुपात में हैं। यदि उनकी लम्बाइयाँ समान हैं, तो उनके प्रतिरोधों का अनुपात होगा।",
+options:["1:4","1:2","2:1","4:1"],
+answer:"D"
+},
+
+{
+id:73,subject:"Physics",
+question:"एक टॉर्च बल्ब की रेटिंग 4.5 V और 200 mA है। उसकी शक्ति होगी।",
+options:["2.25 W","4.4 W","0.9 W","9 W"],
+answer:"C"
+},
+
+{
+id:74,subject:"Physics",
+question:"सौर ऊर्जा का स्रोत है।",
+options:["नाभिकीय विखण्डन","नाभिकीय संलयन","प्राकृतिक गैस दहन","लिग्नाइट का दहन"],
+answer:"B"
+},
+
+{
+id:75,subject:"Physics",
+question:"निम्न में से कौन-सा ऊर्जा स्रोत पुनर्नवीनीकरण योग्य नहीं है?",
+options:["सौर ऊर्जा","महासागरीय ऊर्जा","जैव-गैस ऊर्जा","कोयला ऊर्जा"],
+answer:"D"
+},
+
+/* ================= CHEMISTRY ================= */
+
+{
+id:76,subject:"Chemistry",
+question:"सल्फाइड आयन S²⁻ में संयोजकता इलेक्ट्रॉनों की संख्या है।",
+options:["16","10","9","8"],
+answer:"D"
+},
+
+{
+id:77,subject:"Chemistry",
+question:"जिन तत्वों के संयोजकता इलेक्ट्रॉन एक होते हैं, वे सामान्यतः होते हैं।",
+options:["धातु","अधातु","उपधातु","धातु या अधातु"],
+answer:"A"
+},
+
+{
+id:78,subject:"Chemistry",
+question:"इनमें से कौन आयनिक यौगिक है?",
+options:["CO","HCl","H₂O","KCl"],
+answer:"D"
+},
+
+{
+id:79,subject:"Chemistry",
+question:"इनमें से कौन सोडियम परॉक्साइड है?",
+options:["H₂O₂","Na₂O₂","Na₂O","Al₂O₃"],
+answer:"B"
+},
+
+{
+id:80,subject:"Chemistry",
+question:"इनमें से किस यौगिक में ध्रुवीय सहसंयोजक बन्ध है?",
+options:["CO₂","H₂O","Na₂O","MgO"],
+answer:"B"
+},
+
+{
+id:81,subject:"Chemistry",
+question:"कार्बनिक यौगिकों का महत्वपूर्ण घटक किस समूह का तत्व है?",
+options:["समूह 1","समूह 14","समूह 15","समूह 16"],
+answer:"B"
+},
+
+{
+id:82,subject:"Chemistry",
+question:"निम्नलिखित में से किसकी संयोजी इलेक्ट्रॉन की संख्या अधिकतम है?",
+options:["Na","Al","Si","P"],
+answer:"D"
+},
+
+{
+id:83,subject:"Chemistry",
+question:"इनमें से किस तत्व की परमाणु त्रिज्या अधिकतम है?",
+options:["Na","Mg","K","Ca"],
+answer:"C"
+},
+
+{
+id:84,subject:"Chemistry",
+question:"एल्केन का सामान्य सूत्र है।",
+options:["CₙH₂ₙ₊₂","CₙH₂ₙ","CₙH₂ₙ₋₂","इनमें से कोई नहीं"],
+answer:"A"
+},
+
+{
+id:85,subject:"Chemistry",
+question:"एल्डिहाइड का क्रियाशील समूह है।",
+options:["−CHO","−OH","−COOH","−O−"],
+answer:"A"
+},
+
+{
+id:86,subject:"Chemistry",
+question:"एल्कीन को किस नाम से भी जाना जाता है?",
+options:["पैराफीन","ओलिफीन","दोनों (a) एवं (b)","इनमें से कोई नहीं"],
+answer:"B"
+},
+
+{
+id:87,subject:"Chemistry",
+question:"इनमें से कौन एल्युमीनियम का अयस्क है?",
+options:["बॉक्साइट","सिनेबार","जिंक ब्लेण्ड","इनमें से कोई नहीं"],
+answer:"A"
+},
+
+{
+id:88,subject:"Chemistry",
+question:"निम्न में से कौन ऑक्सीजन से प्रतिक्रिया करके उच्च गलनांक वाला तथा जल में घुलनशील यौगिक देता है?",
+options:["Ca","C","Si","Fe"],
+answer:"A"
+},
+
+{
+id:89,subject:"Chemistry",
+question:"निम्नलिखित में से कौन-सा समूह विस्थापन अभिक्रिया देता है?",
+options:[
+"NaCl का घोल और Cu धातु",
+"MgCl₂ का घोल और Al धातु",
+"FeSO₄ का घोल और Ag धातु",
+"AgNO₃ का घोल और Cu धातु"
+],
+answer:"D"
+},
+
+{
+id:90,subject:"Chemistry",
+question:"एक यौगिक जिसका आण्विक सूत्र समान परन्तु संरचना सूत्र अलग हो, कहलाता है।",
+options:["आइसोमेरिज्म","आइसोबार","आइसोटोप","आइसोटोन"],
+answer:"A"
+},
+
+{
+id:91,subject:"Chemistry",
+question:"CH₃−O−CH₂−CH₃ का IUPAC नाम है।",
+options:["मिथॉक्सी एथेन","एथॉक्सी मिथेन","मिथॉक्सी प्रोपेन","इनमें से कोई नहीं"],
+answer:"A"
+},
+
+{
+id:92,subject:"Chemistry",
+question:"निम्न में से कौन-सा यौगिक योगशील अभिक्रिया में भाग लेता है?",
+options:["H−C≡C−H","CH₄","C₂H₆","C₂H₃"],
+answer:"A"
+},
+
+{
+id:93,subject:"Chemistry",
+question:"इनमें से कौन विनेगर है?",
+options:["CH₃COOH","HCOOH","CHCOOH","CH₃OH"],
+answer:"A"
+},
+
+{
+id:94,subject:"Chemistry",
+question:"साबुन किसके क्षारीय जल-अपघटन द्वारा बनाया जाता है?",
+options:["अल्केन","कार्बोक्सिलिक अम्ल","एस्टर","ऐल्कोहॉल"],
+answer:"C"
+},
+
+{
+id:95,subject:"Chemistry",
+question:"किस स्रोत से प्राप्त जल में साबुन द्वारा सफाई अच्छे से होती है?",
+options:["नल","वर्षा","कुआँ","हैंड पम्प"],
+answer:"B"
+},
+
+{
+id:96,subject:"Chemistry",
+question:"साबुन निर्माण प्रक्रिया में सह-उत्पाद के रूप में बनता है।",
+options:["ग्लाइकोल","ग्लिसरॉल","ग्लूकोज","ग्लाइकोजन"],
+answer:"B"
+},
+
+{
+id:97,subject:"Chemistry",
+question:"हाइड्रोकार्बन वे यौगिक हैं जो।",
+options:[
+"जल में अघुलनशील होते हैं",
+"कार्बन और हाइड्रोजन से बने होते हैं",
+"दोनों (a) एवं (b)",
+"उपरोक्त में से कोई नहीं"
+],
+answer:"C"
+},
+
+{
+id:98,subject:"Chemistry",
+question:"इनमें से कौन-सा यौगिक जलीयकरण द्वारा ऐसीटिलीन गैस देता है?",
+options:["CaC₂","Al₄C₃","CuCl₂","इनमें से कोई नहीं"],
+answer:"A"
+},
+
+{
+id:99,subject:"Chemistry",
+question:"एसीटिलीन का IUPAC नाम है।",
+options:["एथीन","एथाइन","एथेन","प्रोपाइन"],
+answer:"B"
+},
+
+{
+id:100,subject:"Chemistry",
+question:"एल्युमीनियम कार्बाइड के जलीयकरण से कौन-सी गैस बनती है?",
+options:["मीथेन","एथेन","एसीटिलीन","इनमें से कोई नहीं"],
+answer:"A"
+}
+
+];
 
 
-function previewPhoto(event){
+/* =========================================================
+   SOLUTIONS
+========================================================= */
 
-    const file =
-        event.target.files[0];
+const solutions = {
+
+1:"माध्य = (10 + 7 + 13 + 20 + 15) / 5 = 65 / 5 = 13।",
+
+2:"कुल काम = 52 × 35 = 1820 आदमी-दिन। 28 आदमी के लिए दिन = 1820 / 28 = 65 दिन।",
+
+3:"AC की ढाल = (-3−3)/(6−2) = −3/2। x=4 पर y=0 आता है। अतः k = 0।",
+
+4:"cotθ = 15 से sinθ और cosθ निकालने पर दिए गए व्यंजक का मान 225 आता है। दिए गए विकल्पों में 225 नहीं है, इसलिए प्रश्न/विकल्प में त्रुटि है।",
+
+5:"CSA = πdh = 88। d = 88/(π×14) = 2 सेमी।",
+
+6:"l = √(12²+16²) = 20 सेमी। TSA = πr(l+r) = π×12×32 = 384π ≈ 1206.4 cm²। दिए विकल्पों में सही मान नहीं है।",
+
+7:"p⁴−81 = (p²−9)(p²+9) = (p−3)(p+3)(p²+9)। इसलिए दिए विकल्पों में कोई सही नहीं है।",
+
+8:"समीकरण को cross multiply करके हल करने पर x = −26/17।",
+
+9:"x − 2x/5 = 72 ⇒ 3x/5 = 72 ⇒ x = 120।",
+
+10:"शंकु का आयतन = (1/3)π×6²×24 = 288π। गोले का आयतन = 288π। इसलिए R³ = 216 और R = 6 सेमी।",
+
+11:"मूलों का गुणनफल c/a होता है। व्युत्क्रम मूलों का गुणनफल 1 होगा। अतः c/a=1 ⇒ c=a।",
+
+12:"x=1 रखने पर 4+3−4+k²=0 ⇒ k²+3=0। वास्तविक k नहीं मिलता। प्रश्न में त्रुटि है।",
+
+13:"2πr = πr² ⇒ r = 2 मात्रक।",
+
+14:"दूरी = √(10²+24²) = √676 = 26 मी।",
+
+15:"QR=x, PR=25−x। पाइथागोरस से (25−x)²=x²+25 ⇒ x=12 और PR=13। इसलिए sinP=12/13।",
+
+16:"OP² = OT² + PT² ⇒ r²=25²−24²=49 ⇒ r=7 सेमी।",
+
+17:"(1/2)^−2 = 4 इसलिए log_(1/2)(4) = −2।",
+
+18:"निष्पक्ष सिक्के में 2 outcomes होते हैं। चित के लिए 1 अनुकूल outcome है। P=1/2।",
+
+19:"सम संख्याएँ 2,4,6 हैं। P=3/6=1/2।",
+
+20:"इस प्रश्न में आवश्यक अनुक्रम/संख्याएँ उपलब्ध नहीं हैं। इसलिए निश्चित उत्तर निकालना संभव नहीं है।",
+
+21:"एक ईंट का TSA = 2(22.5×10 + 10×7.5 + 22.5×7.5) = 937.5 cm² = 0.09375 m²। संख्या = 9.375/0.09375 = 100।",
+
+22:"समरूप त्रिभुजों के क्षेत्रफल का अनुपात = भुजाओं के अनुपात का वर्ग = (5/7)² = 25/49।",
+
+23:"cosθ=5/4 वास्तविक कोण के लिए संभव नहीं है क्योंकि cosθ का मान −1 से 1 के बीच होता है।",
+
+24:"A² = [[0,0],[0,0]], अर्थात शून्य आव्यूह।",
+
+25:"मूल आव्यूह व्यंजक प्रश्न में उपलब्ध नहीं है, इसलिए निश्चित हल संभव नहीं।",
+
+26:"समान्तर चतुर्भुज के आसन्न कोणों का योग 180° होता है। उनके अर्द्धक 90° पर मिलते हैं।",
+
+27:"(a+b)² = a²+b²+2ab ⇒ 100=58+2ab ⇒ ab=21। फिर a³+b³=10³−3×21×10=370।",
+
+28:"tan30°=1/√3। इसलिए x=30°।",
+
+29:"80x+40 = 27x−18 ⇒ 53x=−58 ⇒ x=−58/53। दिए विकल्पों में सही उत्तर नहीं है।",
+
+30:"पहले व्यक्ति का जन्मदिन निश्चित मानकर दूसरे का उसी दिन जन्म लेने की प्रायिकता = 1/365।",
+
+31:"x=3 और y=3 समान्तर रेखाएँ हैं। दिए गए data से x-अक्ष के साथ बंद त्रिभुज नहीं बनता। प्रश्न में त्रुटि है।",
+
+32:"Polynomial = x² − (sum of roots)x + product = x²+3x+2।",
+
+33:"Equation = x² − 6x + 6 = 0।",
+
+34:"विकर्णों के आधे 5 और d/2 होंगे। 12²=5²+(d/2)² ⇒ d=2√119≈21.82 cm। दिए विकल्पों में नहीं।",
+
+35:"a²=24 और b²=1/24। इसलिए a²+b²=24+1/24=577/24।",
+
+36:"Distance = √[(3+2)²+(2+3)²] = √50।",
+
+37:"6a²=96 ⇒ a²=16 ⇒ a=4। Volume=4³=64 cm³।",
+
+38:"(x−1/x)²=81 ⇒ x²+1/x²−2=81 ⇒ x²+1/x²=83।",
+
+39:"तीन असरेखी बिन्दुओं से केवल एक unique circle गुजरता है।",
+
+40:"1875° को 180° से घटाते हुए 75° मिलता है। tan75° = 2+√3 = (√3+1)/(√3−1)।",
+
+41:"पहला भाग=x और दूसरा=2x/3। x+2x/3=34 ⇒ x=20.4 और दूसरा=13.6। दिए विकल्पों में सही नहीं।",
+
+42:"x-अक्ष पर y=0। x−0=8 ⇒ x=8। इसलिए बिन्दु (8,0)।",
+
+43:"Mode = l + [(f₁−f₀)/(2f₁−f₀−f₂)]h।",
+
+44:"Area ratio = (4/9)² = 16/81।",
+
+45:"Circumference=6280/24≈261.67 m। r≈41.67 m। Area≈5454.15 m² और ₹0.50/m² पर खर्च≈₹2727.08। दिए विकल्पों में नहीं।",
+
+46:"ΔPQR ~ ΔEFD में P↔E। इसलिए ∠E=∠P।",
+
+47:"sinθ=3/5 ⇒ cosθ=4/5। secθ−tanθ = 5/4−3/4 = 1/2। दिए विकल्पों में नहीं।",
+
+48:"Area = (√3/4)a² = (√3/4)×49 = 49√3/4 cm²।",
+
+49:"x,y,z का आवश्यक संबंध प्रश्न में नहीं दिया गया है। इसलिए निश्चित उत्तर संभव नहीं।",
+
+50:"sin(A−B)=1/2 ⇒ A−B=30°। cos(A+B)=0 तथा A+B≤90° ⇒ A+B=90°। जोड़ने पर 2A=120° ⇒ A=60°।",
+
+51:"प्रति इकाई क्षेत्रफल प्रति इकाई समय प्राप्त सौर ऊर्जा को सौर नियतांक कहते हैं।",
+
+52:"रॉकेट propulsion न्यूटन के तृतीय नियम पर आधारित है।",
+
+53:"kWh ऊर्जा की इकाई है। 1 kWh विद्युत ऊर्जा की व्यावहारिक इकाई है।",
+
+54:"बन्द स्विच/कुंजी का विकल्प B है।",
+
+55:"ध्रुव पर rotational centrifugal effect शून्य होता है। पृथ्वी के घूमना बंद करने पर वहाँ भार में परिवर्तन नहीं होगा।",
+
+56:"परावर्तित और अपवर्तित किरणें perpendicular हों तो Brewster condition tan i=μ। इसलिए tan i=√3 ⇒ i=60°।",
+
+57:"g=GM/R² ⇒ M=gR²/G।",
+
+58:"P=1/f=1/(−2m)=−0.50 D।",
+
+59:"पुतली (pupil) प्रकाश को नेत्र में प्रवेश करने देती है।",
+
+60:"sin i/sin r = constant Snell's law है।",
+
+61:"लाउडस्पीकर का permanent magnet soft iron का नहीं होता।",
+
+62:"Mercury का density लगभग 13.6 g/cm³ है।",
+
+63:"Mass अदिश राशि है।",
+
+64:"3000 Å = 3×10⁻⁷ m। f=c/λ=3×10⁸/(3×10⁻⁷)=10¹⁵ Hz। दिए विकल्पों में सही नहीं है।",
+
+65:"Electric current का SI unit Ampere (A) है।",
+
+66:"Least count = 1/20 = 0.05 A।",
+
+67:"u=−20 cm, v=−30 cm। 1/f=−1/30+1/20=1/60। इसलिए f=60 cm=0.6 m और P≈+1.67 D।",
+
+68:"मानव की सामान्य श्रव्य सीमा 20 Hz से 20 kHz है।",
+
+69:"वायुमण्डल के अपवर्तनांक में लगातार बदलाव से तारों का प्रकाश अलग-अलग मात्रा में refract होता है, इसलिए तारे टिमटिमाते दिखाई देते हैं।",
+
+70:"जल की सतह पर बनने वाली तरंगों को सामान्यतः अनुप्रस्थ तरंग माना जाता है।",
+
+71:"gₕ/g=[R/(R+h)]²=1/4। इससे h=R।",
+
+72:"R=ρL/πr², इसलिए R∝1/r²। r का ratio 1:2 होने पर R=4:1।",
+
+73:"P=VI=4.5×0.2=0.9 W।",
+
+74:"सूर्य की ऊर्जा nuclear fusion से उत्पन्न होती है।",
+
+75:"Coal energy non-renewable source है।",
+
+76:"S²⁻ में electron configuration 2,8,8 होता है। इसलिए valence electrons=8।",
+
+77:"एक valence electron वाले सामान्य तत्व Group-1 metals होते हैं।",
+
+78:"KCl ionic compound है।",
+
+79:"Sodium peroxide का formula Na₂O₂ है।",
+
+80:"H₂O में O−H bond polar covalent होता है।",
+
+81:"Carbon Group 14 का तत्व है और organic compounds का मुख्य तत्व है।",
+
+82:"Na=1, Al=3, Si=4 और P=5 valence electrons। इसलिए P maximum है।",
+
+83:"K की atomic radius Na, Mg और Ca की तुलना में दिए options में सबसे अधिक है।",
+
+84:"Alkane का general formula CₙH₂ₙ₊₂ है।",
+
+85:"Aldehyde functional group −CHO है।",
+
+86:"Alkenes को olefins भी कहा जाता है।",
+
+87:"Bauxite aluminium का प्रमुख ore है।",
+
+88:"Calcium oxygen से CaO बनाता है। CaO का melting point ऊँचा होता है और पानी से Ca(OH)₂ बनाता है।",
+
+89:"Cu, AgNO₃ से silver को displace करता है: Cu+2AgNO₃→Cu(NO₃)₂+2Ag।",
+
+90:"Same molecular formula लेकिन अलग structure वाले compounds structural isomers कहलाते हैं।",
+
+91:"CH₃−O−CH₂−CH₃ का IUPAC name methoxyethane है।",
+
+92:"H−C≡C−H में triple bond है, इसलिए यह addition reaction में भाग लेता है।",
+
+93:"Vinegar मुख्यतः dilute CH₃COOH अर्थात acetic acid का aqueous solution है।",
+
+94:"Soap fats/oils के esters के alkaline hydrolysis यानी saponification से बनता है।",
+
+95:"Rain water सामान्यतः soft water होता है, इसलिए soap से अच्छी सफाई/झाग होती है।",
+
+96:"Soap manufacturing में glycerol सह-उत्पाद बनता है।",
+
+97:"Hydrocarbons carbon और hydrogen से बने होते हैं और सामान्यतः water में insoluble होते हैं। इसलिए दोनों statements सही हैं।",
+
+98:"CaC₂ + 2H₂O → C₂H₂ + Ca(OH)₂। इसलिए acetylene gas बनती है।",
+
+99:"Acetylene का IUPAC name ethyne है।",
+
+100:"Al₄C₃ + 12H₂O → 4Al(OH)₃ + 3CH₄। इसलिए methane बनती है।"
+
+};
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+let currentQuestion = 0;
+
+let userAnswers =
+    new Array(questions.length).fill(null);
+
+/* NEW:
+   Question visit tracking
+*/
+let visitedQuestions =
+    new Array(questions.length).fill(false);
+
+let timerSeconds =
+    questions.length * 72;
+
+let timerInterval = null;
+
+let testSubmitted = false;
+
+
+/* =========================================================
+   PHOTO PREVIEW
+========================================================= */
+
+document.getElementById("studentPhoto")
+.addEventListener("change", function(){
+
+    const file = this.files[0];
 
     if(!file) return;
 
-    const reader =
-        new FileReader();
+    const reader = new FileReader();
 
-    reader.onload = function(){
+    reader.onload = function(e){
 
-        document.getElementById(
-            "photoPreview"
-        ).src = reader.result;
+        document.getElementById("photoPreview").innerHTML =
+            `<img src="${e.target.result}">`;
 
     };
 
     reader.readAsDataURL(file);
-}
 
+});
+
+
+/* =========================================================
+   REGISTER
+========================================================= */
 
 function registerStudent(){
 
     const webCode =
         document.getElementById("webCode").value.trim();
-
-    if(webCode !== correctWebCode){
-
-        alert("Incorrect Web Code!");
-
-        return;
-    }
-
 
     const name =
         document.getElementById("studentName").value.trim();
@@ -1022,282 +1858,119 @@ function registerStudent(){
         document.getElementById("studentEmail").value.trim();
 
     const gender =
-        document.getElementById("gender").value;
+        document.getElementById("studentGender").value;
+
+    const dob =
+        document.getElementById("studentDOB").value;
+
+    const age =
+        document.getElementById("studentAge").value;
+
+    const pincode =
+        document.getElementById("studentPincode").value.trim();
+
+    const address =
+        document.getElementById("studentAddress").value.trim();
 
 
-    if(
-        !name ||
-        !phone ||
-        !email ||
-        !gender
-    ){
+    if(webCode !== "Adityavishwakarma771"){
+        alert("Invalid Web Code!");
+        return;
+    }
 
-        alert("Please fill all required details.");
+    if(!name){
+        alert("Student Name भरें");
+        return;
+    }
 
+    if(!/^\d{10}$/.test(phone)){
+        alert("Valid 10 digit phone number डालें");
+        return;
+    }
+
+    if(!email){
+        alert("Email भरें");
+        return;
+    }
+
+    if(!gender){
+        alert("Gender select करें");
+        return;
+    }
+
+    if(!dob){
+        alert("Date of Birth select करें");
+        return;
+    }
+
+    if(!age){
+        alert("Age भरें");
+        return;
+    }
+
+    if(!/^\d{6}$/.test(pincode)){
+        alert("Valid 6 digit Pincode डालें");
+        return;
+    }
+
+    if(!address){
+        alert("Address भरें");
         return;
     }
 
 
-    document.getElementById(
-        "displayName"
-    ).innerText = name;
+    document.getElementById("displayName").textContent =
+        name;
 
-    document.getElementById(
-        "displayPhone"
-    ).innerText = phone;
+    document.getElementById("displayPhone").textContent =
+        phone;
 
-    document.getElementById(
-        "displayEmail"
-    ).innerText = email;
+    document.getElementById("displayEmail").textContent =
+        email;
 
-    document.getElementById(
-        "displayGender"
-    ).innerText = gender;
+    document.getElementById("displayGender").textContent =
+        gender;
 
-
-    document.getElementById(
-        "registration"
-    ).style.display = "none";
+    document.getElementById("displayAge").textContent =
+        age;
 
 
-    document.getElementById(
-        "portal"
-    ).style.display = "block";
+    document.getElementById("registration")
+        .classList.add("hidden");
+
+    document.getElementById("portal")
+        .classList.remove("hidden");
+
 }
 
 
-/* =====================================================
-   QUESTIONS
-===================================================== */
-
-const questions = [];
-
-
-/* ================= MATHEMATICS 1-50 ================= */
-
-const mathQuestions = [
-
-["2 + 3 का मान क्या है?",["4","5","6","7"],"B"],
-["5 × 4 का मान क्या है?",["15","20","25","10"],"B"],
-["10 ÷ 2 का मान क्या है?",["2","4","5","6"],"C"],
-["12 + 8 का मान क्या है?",["18","20","22","24"],"B"],
-["15 - 7 का मान क्या है?",["6","7","8","9"],"C"],
-["3² का मान क्या है?",["6","9","12","15"],"B"],
-["√49 का मान क्या है?",["6","7","8","9"],"B"],
-["2³ का मान क्या है?",["6","8","9","12"],"B"],
-["एक त्रिभुज के कोणों का योग कितना होता है?",["90°","180°","270°","360°"],"B"],
-["वर्ग की सभी भुजाएँ कैसी होती हैं?",["असमान","समान","दो समान","कोई नहीं"],"B"],
-["π का लगभग मान क्या है?",["2.14","3.14","4.14","1.14"],"B"],
-["25% को भिन्न में कैसे लिखेंगे?",["1/2","1/3","1/4","1/5"],"C"],
-["1 किलोमीटर में कितने मीटर होते हैं?",["10","100","1000","10000"],"C"],
-["100 का 10% कितना है?",["5","10","15","20"],"B"],
-["यदि x+5=10 तो x का मान?",["3","4","5","6"],"C"],
-["2x=14 तो x कितना है?",["5","6","7","8"],"C"],
-["5² का मान?",["10","15","20","25"],"D"],
-["4³ का मान?",["16","32","64","81"],"C"],
-["9 × 9 कितना है?",["72","81","90","99"],"B"],
-["144 का वर्गमूल?",["10","11","12","13"],"C"],
-["2/3 + 1/3 कितना है?",["1/3","2/3","1","4/3"],"C"],
-["5/10 का सरल रूप?",["1/2","1/3","2/3","3/4"],"A"],
-["यदि a=2,b=3 तो a+b?",["4","5","6","7"],"B"],
-["यदि x=4 तो 2x+3?",["9","10","11","12"],"C"],
-["एक वृत्त का व्यास 10 cm है तो त्रिज्या?",["2","5","10","20"],"B"],
-["समकोण कितने डिग्री का होता है?",["45°","60°","90°","180°"],"C"],
-["45° का पूरक कोण?",["35°","45°","55°","90°"],"B"],
-["60° का सम्पूरक कोण?",["90°","100°","120°","180°"],"C"],
-["आयत का क्षेत्रफल?",["लंबाई+चौड़ाई","लंबाई×चौड़ाई","2×लंबाई","2×चौड़ाई"],"B"],
-["वर्ग का क्षेत्रफल?",["4a","a²","2a","a/2"],"B"],
-["2,4,6,8 के बाद?",["9","10","11","12"],"B"],
-["3,6,9,12 के बाद?",["13","14","15","16"],"C"],
-["10 और 15 का HCF?",["3","5","10","15"],"B"],
-["10 और 15 का LCM?",["20","25","30","35"],"C"],
-["7 × 8?",["54","56","58","60"],"B"],
-["81 ÷ 9?",["7","8","9","10"],"C"],
-["16 का 50%?",["4","6","8","10"],"C"],
-["200 का 25%?",["25","40","50","75"],"C"],
-["यदि 3x=21 तो x?",["5","6","7","8"],"C"],
-["x/4=5 तो x?",["10","15","20","25"],"C"],
-["5+5×2 का मान?",["20","15","10","25"],"B"],
-["(10-4)×2?",["8","10","12","14"],"C"],
-["2+4+6+8?",["18","20","22","24"],"B"],
-["एक दर्जन में कितनी वस्तुएँ?",["10","12","14","16"],"B"],
-["त्रिभुज का क्षेत्रफल?",["bh","1/2 bh","2bh","b+h"],"B"],
-["घन का आयतन?",["a²","4a","a³","3a"],"C"],
-["यदि अनुपात 2:3 है तो कुल भाग?",["2","3","5","6"],"C"],
-["1/2 का दशमलव रूप?",["0.2","0.25","0.5","1.5"],"C"],
-["0.75 का भिन्न रूप?",["1/2","2/3","3/4","4/5"],"C"],
-["10² + 5²?",["100","125","150","25"],"B"]
-
-];
-
-
-/* ================= PHYSICS 51-75 ================= */
-
-const physicsQuestions = [
-
-["बल की SI इकाई क्या है?",["जूल","न्यूटन","वाट","पास्कल"],"B"],
-["कार्य की SI इकाई?",["न्यूटन","जूल","वाट","मीटर"],"B"],
-["शक्ति की SI इकाई?",["जूल","न्यूटन","वाट","पास्कल"],"C"],
-["विद्युत धारा की SI इकाई?",["वोल्ट","एम्पियर","ओम","वाट"],"B"],
-["विभवांतर की इकाई?",["वोल्ट","एम्पियर","ओम","जूल"],"A"],
-["प्रतिरोध की इकाई?",["वोल्ट","ओम","एम्पियर","वाट"],"B"],
-["प्रकाश की चाल लगभग कितनी है?",["3×10⁸ m/s","3×10⁶ m/s","3×10⁴ m/s","3×10² m/s"],"A"],
-["गुरुत्वीय त्वरण का मान लगभग?",["9.8 m/s²","8.9 m/s²","98 m/s²","1.8 m/s²"],"A"],
-["द्रव्यमान की SI इकाई?",["ग्राम","किलोग्राम","टन","न्यूटन"],"B"],
-["समय की SI इकाई?",["मिनट","घंटा","सेकंड","दिन"],"C"],
-["वेग का सूत्र?",["दूरी/समय","समय/दूरी","दूरी×समय","दूरी+समय"],"A"],
-["ओम का नियम?",["V=IR","P=VI","F=ma","W=Fs"],"A"],
-["ऊर्जा की SI इकाई?",["वाट","जूल","न्यूटन","ओम"],"B"],
-["दाब की SI इकाई?",["पास्कल","जूल","वाट","न्यूटन"],"A"],
-["घनत्व का सूत्र?",["mV","m/V","V/m","m+V"],"B"],
-["ध्वनि निर्वात में?",["चलती है","नहीं चलती","तेज चलती है","प्रकाश बनती है"],"B"],
-["तापमान की SI इकाई?",["सेल्सियस","केल्विन","फारेनहाइट","जूल"],"B"],
-["विद्युत शक्ति का सूत्र?",["P=VI","P=IR","P=V/I","P=I/R"],"A"],
-["लेंस की शक्ति की इकाई?",["मीटर","डायोप्टर","जूल","वाट"],"B"],
-["आवृत्ति की SI इकाई?",["हर्ट्ज","न्यूटन","वाट","मीटर"],"A"],
-["दर्पण में प्रकाश का नियम?",["परावर्तन","अपवर्तन","विक्षेपण","चालन"],"A"],
-["ताप का संचार निर्वात में किससे?",["चालन","संवहन","विकिरण","कोई नहीं"],"C"],
-["चुंबकीय क्षेत्र की SI इकाई?",["टेस्ला","जूल","वाट","पास्कल"],"A"],
-["विद्युत ऊर्जा को यांत्रिक ऊर्जा में बदलने वाला यंत्र?",["मोटर","जनरेटर","ट्रांसफॉर्मर","बैटरी"],"A"],
-["यांत्रिक ऊर्जा को विद्युत ऊर्जा में बदलने वाला?",["मोटर","जनरेटर","बल्ब","हीटर"],"B"]
-
-];
-
-
-/* ================= CHEMISTRY 76-100 ================= */
-
-const chemistryQuestions = [
-
-["जल का रासायनिक सूत्र?",["CO2","H2O","O2","H2"],"B"],
-["ऑक्सीजन का प्रतीक?",["O","Ox","C","N"],"A"],
-["हाइड्रोजन का प्रतीक?",["H","He","Hy","Hg"],"A"],
-["कार्बन का प्रतीक?",["Ca","C","Co","Cr"],"B"],
-["Na किस तत्व का प्रतीक है?",["नाइट्रोजन","सोडियम","निकेल","नियोन"],"B"],
-["ऑक्सीजन की परमाणु संख्या?",["6","7","8","9"],"C"],
-["हाइड्रोजन की परमाणु संख्या?",["1","2","3","4"],"A"],
-["कार्बन की परमाणु संख्या?",["4","6","8","12"],"B"],
-["CO2 का नाम?",["कार्बन मोनोऑक्साइड","कार्बन डाइऑक्साइड","कैल्शियम ऑक्साइड","ऑक्सीजन"],"B"],
-["NaCl का सामान्य नाम?",["चीनी","नमक","चूना","सोडा"],"B"],
-["अम्ल का pH सामान्यतः?",["7 से कम","7","7 से अधिक","14 से अधिक"],"A"],
-["उदासीन पदार्थ का pH?",["0","5","7","14"],"C"],
-["क्षार का pH सामान्यतः?",["7 से कम","7","7 से अधिक","0"],"C"],
-["HCl क्या है?",["अम्ल","क्षार","लवण","धातु"],"A"],
-["NaOH क्या है?",["अम्ल","क्षार","लवण","गैस"],"B"],
-["आवर्त सारणी में कितने समूह हैं?",["8","12","18","20"],"C"],
-["लोहे का प्रतीक?",["Ir","Fe","F","I"],"B"],
-["सोने का प्रतीक?",["Ag","Au","Gd","Go"],"B"],
-["चांदी का प्रतीक?",["Ag","Au","Si","S"],"A"],
-["पानी का क्वथनांक सामान्य दाब पर?",["0°C","50°C","100°C","200°C"],"C"],
-["पानी का हिमांक?",["0°C","10°C","50°C","100°C"],"A"],
-["वायुमंडल में सर्वाधिक गैस?",["ऑक्सीजन","नाइट्रोजन","कार्बन डाइऑक्साइड","हाइड्रोजन"],"B"],
-["CO गैस कैसी है?",["रंगहीन","नीली","हरी","पीली"],"A"],
-["जंग मुख्यतः किस धातु पर लगती है?",["सोना","लोहा","चांदी","तांबा"],"B"],
-["रासायनिक अभिक्रिया में नए पदार्थ?",["बन सकते हैं","कभी नहीं बनते","हमेशा गैस होते हैं","हमेशा ठोस होते हैं"],"A"]
-
-];
-
-
-/* Convert questions */
-
-mathQuestions.forEach(function(q,index){
-
-    questions.push({
-
-        id:index+1,
-
-        subject:"Mathematics",
-
-        question:q[0],
-
-        options:q[1],
-
-        answer:q[2]
-
-    });
-
-});
-
-
-physicsQuestions.forEach(function(q,index){
-
-    questions.push({
-
-        id:index+51,
-
-        subject:"Physics",
-
-        question:q[0],
-
-        options:q[1],
-
-        answer:q[2]
-
-    });
-
-});
-
-
-chemistryQuestions.forEach(function(q,index){
-
-    questions.push({
-
-        id:index+76,
-
-        subject:"Chemistry",
-
-        question:q[0],
-
-        options:q[1],
-
-        answer:q[2]
-
-    });
-
-});
-
-
-/* =====================================================
-   TEST VARIABLES
-===================================================== */
-
-let currentQuestion = 0;
-
-let userAnswers =
-    new Array(questions.length).fill(null);
-
-
-/*
-    NEW IMPORTANT ARRAY
-
-    false = question not visited
-    true  = question visited
-*/
-
-let visitedQuestions =
-    new Array(questions.length).fill(false);
-
-
-let timerSeconds =
-    questions.length * 72;
-
-let timerInterval = null;
-
-let testSubmitted = false;
-
-
-/* =====================================================
-   START TEST
-===================================================== */
+/* =========================================================
+   START MOCK TEST
+========================================================= */
 
 function startMockTest(){
+
+    document.getElementById("portal")
+        .classList.add("hidden");
+
+    document.getElementById("resultPage")
+        .classList.add("hidden");
+
+    document.getElementById("solutionsPage")
+        .classList.add("hidden");
+
+    document.getElementById("testPage")
+        .classList.remove("hidden");
+
 
     currentQuestion = 0;
 
     userAnswers =
         new Array(questions.length).fill(null);
 
-    /*
-       Reset all visited questions
+    /* IMPORTANT:
+       हर नया test शुरू होने पर
+       visited status reset होगा
     */
 
     visitedQuestions =
@@ -1309,26 +1982,6 @@ function startMockTest(){
     testSubmitted = false;
 
 
-    document.getElementById(
-        "portal"
-    ).style.display = "none";
-
-
-    document.getElementById(
-        "resultPage"
-    ).style.display = "none";
-
-
-    document.getElementById(
-        "solutionsPage"
-    ).style.display = "none";
-
-
-    document.getElementById(
-        "testPage"
-    ).style.display = "block";
-
-
     createQuestionGrid();
 
     showQuestion();
@@ -1338,109 +1991,152 @@ function startMockTest(){
 }
 
 
-/* =====================================================
+/* =========================================================
+   TIMER
+========================================================= */
+
+function startTimer(){
+
+    clearInterval(timerInterval);
+
+    updateTimer();
+
+    timerInterval =
+        setInterval(function(){
+
+            if(timerSeconds <= 0){
+
+                clearInterval(timerInterval);
+
+                alert("Time Over! Test automatically submit हो रहा है.");
+
+                submitTest();
+
+                return;
+            }
+
+            timerSeconds--;
+
+            updateTimer();
+
+        },1000);
+
+}
+
+
+function updateTimer(){
+
+    const hours =
+        Math.floor(timerSeconds / 3600);
+
+    const minutes =
+        Math.floor((timerSeconds % 3600) / 60);
+
+    const seconds =
+        timerSeconds % 60;
+
+
+    const formatted =
+        String(hours).padStart(2,"0") +
+        ":" +
+        String(minutes).padStart(2,"0") +
+        ":" +
+        String(seconds).padStart(2,"0");
+
+
+    document.getElementById("timer")
+        .textContent = formatted;
+
+}
+
+
+/* =========================================================
    SHOW QUESTION
-===================================================== */
+========================================================= */
 
 function showQuestion(){
 
-    const q =
-        questions[currentQuestion];
-
-
     /*
-       IMPORTANT:
-
-       जैसे ही question दिखाई देता है,
-       उसे visited mark कर दिया जाता है।
-
-       इसलिए Next करने के बाद वह
-       Yellow दिखाई देगा अगर answer नहीं दिया।
+       जैसे ही question screen पर आता है,
+       उसे visited माना जाएगा।
     */
 
     visitedQuestions[currentQuestion] = true;
 
 
-    document.getElementById(
-        "subjectName"
-    ).innerText =
-        q.subject;
+    const q =
+        questions[currentQuestion];
 
 
-    document.getElementById(
-        "questionNumber"
-    ).innerText =
-        "Question " +
-        (currentQuestion + 1);
+    document.getElementById("questionInfo")
+        .textContent =
+        `Question ${currentQuestion + 1} / ${questions.length}`;
 
 
-    document.getElementById(
-        "questionText"
-    ).innerText =
+    document.getElementById("questionText")
+        .textContent =
         q.question;
 
 
-    document.getElementById(
-        "progressText"
-    ).innerText =
-        "Question " +
-        (currentQuestion + 1) +
-        " / " +
-        questions.length;
-
-
     const optionsContainer =
-        document.getElementById("options");
-
+        document.getElementById("optionsContainer");
 
     optionsContainer.innerHTML = "";
 
 
     q.options.forEach(function(option,index){
 
-        const button =
-            document.createElement("button");
-
-
-        button.className = "option";
-
-
         const letter =
             String.fromCharCode(65 + index);
 
+        const label =
+            document.createElement("label");
 
-        button.innerText =
-            letter + ". " + option;
+        label.className = "option";
 
 
-        /*
-           पहले से selected answer
-        */
-
-        if(
-            userAnswers[currentQuestion]
-            === letter
-        ){
-
-            button.classList.add("selected");
-
+        if(userAnswers[currentQuestion] === letter){
+            label.classList.add("selected");
         }
 
 
-        button.onclick = function(){
+        label.innerHTML = `
+            <input
+                type="radio"
+                name="answer"
+                value="${letter}"
+                ${userAnswers[currentQuestion] === letter ? "checked" : ""}
+            >
+            <b>${letter}.</b> ${option}
+        `;
+
+
+        const radio =
+            label.querySelector("input");
+
+
+        radio.addEventListener("change",function(){
 
             userAnswers[currentQuestion] =
-                letter;
+                this.value;
 
 
-            showQuestion();
+            document
+                .querySelectorAll(".option")
+                .forEach(function(item){
+                    item.classList.remove("selected");
+                });
+
+
+            label.classList.add("selected");
+
 
             updateQuestionGrid();
 
-        };
+        });
 
 
-        optionsContainer.appendChild(button);
+        optionsContainer.appendChild(label);
 
     });
 
@@ -1450,17 +2146,66 @@ function showQuestion(){
 }
 
 
-/* =====================================================
+/* =========================================================
+   NEXT
+========================================================= */
+
+function nextQuestion(){
+
+    if(currentQuestion < questions.length - 1){
+
+        currentQuestion++;
+
+        showQuestion();
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    }else{
+
+        alert("यह आखिरी question है।");
+
+    }
+
+}
+
+
+/* =========================================================
+   PREVIOUS
+========================================================= */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        showQuestion();
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    }else{
+
+        alert("यह पहला question है।");
+
+    }
+
+}
+
+
+/* =========================================================
    QUESTION GRID
-===================================================== */
+========================================================= */
 
 function createQuestionGrid(){
 
     const grid =
-        document.getElementById(
-            "questionGrid"
-        );
-
+        document.getElementById("questionGrid");
 
     grid.innerHTML = "";
 
@@ -1470,11 +2215,9 @@ function createQuestionGrid(){
         const button =
             document.createElement("button");
 
-
         button.className = "q-btn";
 
-
-        button.innerText =
+        button.textContent =
             index + 1;
 
 
@@ -1484,7 +2227,10 @@ function createQuestionGrid(){
 
             showQuestion();
 
-            updateQuestionGrid();
+            window.scrollTo({
+                top:0,
+                behavior:"smooth"
+            });
 
         };
 
@@ -1499,9 +2245,9 @@ function createQuestionGrid(){
 }
 
 
-/* =====================================================
-   UPDATE QUESTION COLORS
-===================================================== */
+/* =========================================================
+   UPDATE QUESTION GRID
+========================================================= */
 
 function updateQuestionGrid(){
 
@@ -1512,39 +2258,28 @@ function updateQuestionGrid(){
     buttons.forEach(function(btn,index){
 
         /*
-           पहले सभी status हटाओ
+           सभी पुराने status हटाएँ
         */
 
-        btn.classList.remove(
-            "done",
-            "visited",
-            "current"
-        );
+        btn.classList.remove("done");
+
+        btn.classList.remove("visited");
+
+        btn.classList.remove("current");
 
 
         /*
-           Answer दिया है
-           = GREEN
+           Priority:
+           Answered → Green
+           Visited → Yellow
+           Unvisited → Gray
         */
 
-        if(
-            userAnswers[index] !== null
-        ){
+        if(userAnswers[index] !== null){
 
             btn.classList.add("done");
 
-        }
-
-
-        /*
-           Answer नहीं दिया लेकिन
-           question देखा है
-           = YELLOW
-        */
-
-        else if(
-            visitedQuestions[index]
-        ){
+        }else if(visitedQuestions[index]){
 
             btn.classList.add("visited");
 
@@ -1552,17 +2287,11 @@ function updateQuestionGrid(){
 
 
         /*
-           Current question
-           = BLUE
-
-           यह आखिर में लगाया गया है,
-           इसलिए current question
-           हमेशा blue रहेगा।
+           Current question हमेशा Blue
+           रहेगा।
         */
 
-        if(
-            index === currentQuestion
-        ){
+        if(index === currentQuestion){
 
             btn.classList.add("current");
 
@@ -1573,131 +2302,23 @@ function updateQuestionGrid(){
 }
 
 
-/* =====================================================
-   NEXT QUESTION
-===================================================== */
-
-function nextQuestion(){
-
-    if(
-        currentQuestion <
-        questions.length - 1
-    ){
-
-        currentQuestion++;
-
-        showQuestion();
-
-    }
-
-}
-
-
-/* =====================================================
-   PREVIOUS QUESTION
-===================================================== */
-
-function previousQuestion(){
-
-    if(
-        currentQuestion > 0
-    ){
-
-        currentQuestion--;
-
-        showQuestion();
-
-    }
-
-}
-
-
-/* =====================================================
-   TIMER
-===================================================== */
-
-function startTimer(){
-
-    clearInterval(timerInterval);
-
-
-    updateTimerDisplay();
-
-
-    timerInterval =
-        setInterval(function(){
-
-            if(timerSeconds <= 0){
-
-                clearInterval(timerInterval);
-
-                alert(
-                    "Time समाप्त हो गया। Test automatically submit हो रहा है."
-                );
-
-                submitTest(true);
-
-                return;
-            }
-
-
-            timerSeconds--;
-
-            updateTimerDisplay();
-
-        },1000);
-
-}
-
-
-function updateTimerDisplay(){
-
-    const hours =
-        Math.floor(
-            timerSeconds / 3600
-        );
-
-
-    const minutes =
-        Math.floor(
-            (timerSeconds % 3600) / 60
-        );
-
-
-    const seconds =
-        timerSeconds % 60;
-
-
-    document.getElementById(
-        "timer"
-    ).innerText =
-
-        String(hours).padStart(2,"0")
-        + ":" +
-
-        String(minutes).padStart(2,"0")
-        + ":" +
-
-        String(seconds).padStart(2,"0");
-
-}
-
-
-/* =====================================================
+/* =========================================================
    SUBMIT TEST
-===================================================== */
+========================================================= */
 
-function submitTest(autoSubmit=false){
+function submitTest(){
 
-    if(
-        !autoSubmit &&
-        !confirm(
-            "क्या आप test submit करना चाहते हैं?"
-        )
-    ){
-
+    if(testSubmitted){
         return;
+    }
 
+
+    const confirmed =
+        confirm("क्या आप test submit करना चाहते हैं?");
+
+
+    if(!confirmed){
+        return;
     }
 
 
@@ -1715,23 +2336,20 @@ function submitTest(autoSubmit=false){
 
     questions.forEach(function(q,index){
 
-        const answer =
+        const userAnswer =
             userAnswers[index];
 
 
-        if(answer === null){
+        if(userAnswer === null){
 
             unattempted++;
 
-        }
-
-        else if(answer === q.answer){
+        }else if(q.answer !== null &&
+                 userAnswer === q.answer){
 
             correct++;
 
-        }
-
-        else{
+        }else{
 
             wrong++;
 
@@ -1741,79 +2359,44 @@ function submitTest(autoSubmit=false){
 
 
     const percentage =
-        (
-            correct /
-            questions.length
-        ) * 100;
+        ((correct / questions.length) * 100)
+        .toFixed(2);
 
 
-    document.getElementById(
-        "testPage"
-    ).style.display = "none";
+    document.getElementById("correctCount")
+        .textContent = correct;
 
 
-    document.getElementById(
-        "resultPage"
-    ).style.display = "block";
+    document.getElementById("wrongCount")
+        .textContent = wrong;
 
 
-    document.getElementById(
-        "finalScore"
-    ).innerText =
-        correct +
-        " / " +
-        questions.length;
+    document.getElementById("unattemptedCount")
+        .textContent = unattempted;
 
 
-    document.getElementById(
-        "correctCount"
-    ).innerText =
-        correct;
+    document.getElementById("percentage")
+        .textContent = percentage + "%";
 
 
-    document.getElementById(
-        "wrongCount"
-    ).innerText =
-        wrong;
+    document.getElementById("testPage")
+        .classList.add("hidden");
 
 
-    document.getElementById(
-        "unattemptedCount"
-    ).innerText =
-        unattempted;
-
-
-    document.getElementById(
-        "percentageText"
-    ).innerText =
-        "Percentage: " +
-        percentage.toFixed(2) +
-        "%";
+    document.getElementById("resultPage")
+        .classList.remove("hidden");
 
 }
 
 
-/* =====================================================
-   SOLUTIONS
-===================================================== */
+/* =========================================================
+   SHOW SOLUTIONS
+========================================================= */
 
 function showSolutions(){
 
-    document.getElementById(
-        "resultPage"
-    ).style.display = "none";
-
-
-    document.getElementById(
-        "solutionsPage"
-    ).style.display = "block";
-
-
     const container =
-        document.getElementById(
-            "solutionsContainer"
-        );
-
+        document.getElementById("solutionsContainer");
 
     container.innerHTML = "";
 
@@ -1823,37 +2406,40 @@ function showSolutions(){
         const card =
             document.createElement("div");
 
-
         card.className =
             "solution-card";
 
 
-        const correctIndex =
-            q.answer.charCodeAt(0) -
-            65;
+        const userAnswer =
+            userAnswers[index];
 
 
-        const correctText =
-            q.options[correctIndex];
+        let answerText = "";
+
+        if(userAnswer === null){
+
+            answerText =
+                "आपका उत्तर: Attempt नहीं किया";
+
+        }else{
+
+            answerText =
+                "आपका उत्तर: " + userAnswer;
+
+        }
 
 
-        let userText =
-            "Not Attempted";
+        let correctText = "";
 
+        if(q.answer === null){
 
-        if(
-            userAnswers[index] !== null
-        ){
+            correctText =
+                "सही विकल्प: उपलब्ध नहीं / प्रश्न में त्रुटि";
 
-            const userIndex =
-                userAnswers[index].charCodeAt(0)
-                - 65;
+        }else{
 
-
-            userText =
-                userAnswers[index] +
-                ". " +
-                q.options[userIndex];
+            correctText =
+                "सही विकल्प: " + q.answer;
 
         }
 
@@ -1861,27 +2447,24 @@ function showSolutions(){
         card.innerHTML = `
 
             <h3>
-                Q${index + 1}.
-                ${q.subject}
+                Q${q.id}. ${q.subject}
             </h3>
 
-            <p>
-                <b>${q.question}</b>
+            <div class="solution-question">
+                ${q.question}
+            </div>
+
+            <p class="solution-answer">
+                ${answerText}
             </p>
 
-            <p class="correct-answer">
-                Correct Answer:
-                ${q.answer}. ${correctText}
-            </p>
-
-            <p>
-                Your Answer:
-                ${userText}
+            <p class="solution-answer">
+                ${correctText}
             </p>
 
             <p class="solution-text">
-                सही उत्तर:
-                ${correctText}
+                <b>Solution:</b><br>
+                ${solutions[q.id] || "Solution उपलब्ध नहीं है।"}
             </p>
 
         `;
@@ -1891,67 +2474,80 @@ function showSolutions(){
 
     });
 
+
+    document.getElementById("resultPage")
+        .classList.add("hidden");
+
+
+    document.getElementById("solutionsPage")
+        .classList.remove("hidden");
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
 }
 
 
-/* =====================================================
+/* =========================================================
    BACK TO RESULT
-===================================================== */
+========================================================= */
 
 function backToResult(){
 
-    document.getElementById(
-        "solutionsPage"
-    ).style.display = "none";
+    document.getElementById("solutionsPage")
+        .classList.add("hidden");
 
+    document.getElementById("resultPage")
+        .classList.remove("hidden");
 
-    document.getElementById(
-        "resultPage"
-    ).style.display = "block";
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 
 }
 
 
-/* =====================================================
+/* =========================================================
    BACK TO PORTAL
-===================================================== */
+========================================================= */
 
 function backToPortal(){
 
     clearInterval(timerInterval);
 
+    document.getElementById("resultPage")
+        .classList.add("hidden");
 
-    document.getElementById(
-        "resultPage"
-    ).style.display = "none";
+    document.getElementById("solutionsPage")
+        .classList.add("hidden");
 
+    document.getElementById("testPage")
+        .classList.add("hidden");
 
-    document.getElementById(
-        "solutionsPage"
-    ).style.display = "none";
+    document.getElementById("portal")
+        .classList.remove("hidden");
 
-
-    document.getElementById(
-        "testPage"
-    ).style.display = "none";
-
-
-    document.getElementById(
-        "portal"
-    ).style.display = "block";
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 
 }
 
 
-/* =====================================================
+/* =========================================================
    COMING SOON
-===================================================== */
+========================================================= */
 
 function showComingSoon(name){
 
     alert(
         name +
-        " section जल्द ही उपलब्ध होगा."
+        " section अभी तैयार किया जा रहा है।"
     );
 
 }
